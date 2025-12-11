@@ -90,37 +90,77 @@
                 font-size: 0.95rem;
               "
             >
-              Rolls left: <strong id="rolls-left">3</strong>
+              Heittoja jäljellä: <strong id="rolls-left">3</strong>
             </div>
 
             <!-- Scorecard: list of categories with data attributes for JS to set values -->
             <div class="scorecard" aria-label="Scorecard">
               <div class="score-row">
-                <div class="label">Ones</div>
+                <div class="label">Ykköset</div>
                 <div class="value" data-score-key="ones">—</div>
               </div>
               <div class="score-row">
-                <div class="label">Twos</div>
+                <div class="label">Kakkoset</div>
                 <div class="value" data-score-key="twos">—</div>
               </div>
               <div class="score-row">
-                <div class="label">Threes</div>
+                <div class="label">Kolmoset</div>
                 <div class="value" data-score-key="threes">—</div>
               </div>
               <div class="score-row">
-                <div class="label">Fours</div>
+                <div class="label">Neloset</div>
                 <div class="value" data-score-key="fours">—</div>
               </div>
               <div class="score-row">
-                <div class="label">Fives</div>
+                <div class="label">Vitoset</div>
                 <div class="value" data-score-key="fives">—</div>
               </div>
               <div class="score-row">
-                <div class="label">Sixes</div>
+                <div class="label">Kutoset</div>
                 <div class="value" data-score-key="sixes">—</div>
               </div>
+              <div class="score-row separator">
+                <div class="label">Yläkerran pisteet yhteensä</div>
+                <div class="value" data-score-key="upperTotal">0</div>
+              </div>
               <div class="score-row">
-                <div class="label">Chance</div>
+                <div class="label">Bonus</div>
+                <div class="value" data-score-key="bonus">0</div>
+              </div>
+              <div class="score-row separator">
+                <div class="label">Pari</div>
+                <div class="value" data-score-key="pair">—</div>
+              </div>
+              <div class="score-row">
+                <div class="label">Kaksi paria</div>
+                <div class="value" data-score-key="twoPairs">—</div>
+              </div>
+              <div class="score-row">
+                <div class="label">3-luku</div>
+                <div class="value" data-score-key="threeOfAKind">—</div>
+              </div>
+              <div class="score-row">
+                <div class="label">4-luku</div>
+                <div class="value" data-score-key="fourOfAKind">—</div>
+              </div>
+              <div class="score-row">
+                <div class="label">5-luku</div>
+                <div class="value" data-score-key="fiveOfAKind">—</div>
+              </div>
+              <div class="score-row">
+                <div class="label">Pieni suora</div>
+                <div class="value" data-score-key="smallStraight">—</div>
+              </div>
+              <div class="score-row">
+                <div class="label">Iso suora</div>
+                <div class="value" data-score-key="largeStraight">—</div>
+              </div>
+              <div class="score-row">
+                <div class="label">Mökki</div>
+                <div class="value" data-score-key="fullHouse">—</div>
+              </div>      
+              <div class="score-row">
+                <div class="label">Sattuma</div>
                 <div class="value" data-score-key="chance">—</div>
               </div>
               <div class="score-row">
@@ -128,7 +168,7 @@
                 <div class="value" data-score-key="yatzy">—</div>
               </div>
               <div class="score-row">
-                <div class="label">Total</div>
+                <div class="label">Yhteensä</div>
                 <div class="value" data-score-key="total">0</div>
               </div>
             </div>
