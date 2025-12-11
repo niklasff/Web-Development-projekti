@@ -27,7 +27,7 @@
       <main>
         <section class="board">
           <section class="game-card" aria-labelledby="game-title">
-            <h2 id="game-title" style="margin-top: 0">Game</h2>
+            <h2 id="game-title" style="margin-top: 0">Yatzy</h2>
 
             <!-- Dice area: five dice placeholders. Each die has data-die-index for JS to hook into. -->
             <div class="dice-row" role="group" aria-label="Dice">
@@ -75,9 +75,9 @@
 
             <!-- Controls: roll, new round, message (aria-live) -->
             <div class="controls">
-              <button class="btn" id="roll-button" type="button">Roll</button>
+              <button class="btn" id="roll-button" type="button">Heitä!</button>
               <button class="btn secondary" id="end-turn-button" type="button">
-                End Turn
+                Päätä vuoro!
               </button>
             </div>
 
@@ -174,7 +174,7 @@
                 <div class="value" data-score-key="upperTotal" data-player-index="3">0</div>
               </div>
 
-              <div class="score-row">
+              <div class="score-row separator">
                 <div class="label">Bonus</div>
                 <div class="value" data-score-key="bonus" data-player-index="0">0</div>
                 <div class="value" data-score-key="bonus" data-player-index="1">0</div>
@@ -183,7 +183,7 @@
               </div>
 
               <!-- Alakerta -->
-              <div class="score-row separator">
+              <div class="score-row">
                 <div class="label">Pari</div>
                 <div class="value" data-score-key="pair" data-player-index="0">—</div>
                 <div class="value" data-score-key="pair" data-player-index="1">—</div>
@@ -302,5 +302,7 @@
         </section>
       </main>
     </div>
+
+    <script src="Taulukko.js"></script>
   </body>
 </html>
