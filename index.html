@@ -93,85 +93,183 @@
               Heittoja jäljellä: <strong id="rolls-left">3</strong>
             </div>
 
-            <!-- Scorecard: list of categories with data attributes for JS to set values -->
+
+            <!-- Pelaajien määrän valinta, 2 oletuksena tulee olemaan pelaajia ehkäpä, tai sit vaan 1-->
+
+            <div style="margin: 8px 0;">
+              <label for="player-count" style="color: var(--muted);">Pelaajamäärä</label>
+              <select id="player-count">
+                <option value="1">1 Pelaaja></option>
+                <option value="2">2 Pelaajaa</option>
+                <option value="3">3 Pelaajaa</option>
+                <option value="4">4 Pelaajaa</option>
+              </select>
+            </div>
+
+            <!-- Piste taulukko staattiseti 4 pelaajalle,-->
             <div class="scorecard" aria-label="Scorecard">
+              <div class="score-header">
+                <div class="label label--corner" aria-hidden="true"></div>
+                <div class="player-col" data-player-index="0"><button class="player-name" type="button">Pelaaja 1</button></div>                
+                <div class="player-col" data-player-index="1"><button class="player-name" type="button">Pelaaja 2</button></div>                
+                <div class="player-col" data-player-index="2"><button class="player-name" type="button">Pelaaja 3</button></div>
+                <div class="player-col" data-player-index="3"><button class="player-name" type="button">Pelaaja 4</button></div>
+              </div>
+
+              <!-- Yläkerta -->
               <div class="score-row">
                 <div class="label">Ykköset</div>
-                <div class="value" data-score-key="ones">—</div>
+                <div class="value" data-score-key="ones" data-player-index="0">—</div>
+                <div class="value" data-score-key="ones" data-player-index="1">—</div>
+                <div class="value" data-score-key="ones" data-player-index="2">—</div>
+                <div class="value" data-score-key="ones" data-player-index="3">—</div>
               </div>
+
               <div class="score-row">
                 <div class="label">Kakkoset</div>
-                <div class="value" data-score-key="twos">—</div>
+                <div class="value" data-score-key="twos" data-player-index="0">—</div>
+                <div class="value" data-score-key="twos" data-player-index="1">—</div>
+                <div class="value" data-score-key="twos" data-player-index="2">—</div>
+                <div class="value" data-score-key="twos" data-player-index="3">—</div>
               </div>
+
               <div class="score-row">
                 <div class="label">Kolmoset</div>
-                <div class="value" data-score-key="threes">—</div>
+                <div class="value" data-score-key="threes" data-player-index="0">—</div>
+                <div class="value" data-score-key="threes" data-player-index="1">—</div>
+                <div class="value" data-score-key="threes" data-player-index="2">—</div>
+                <div class="value" data-score-key="threes" data-player-index="3">—</div>
               </div>
+
               <div class="score-row">
                 <div class="label">Neloset</div>
-                <div class="value" data-score-key="fours">—</div>
+                <div class="value" data-score-key="fours" data-player-index="0">—</div>
+                <div class="value" data-score-key="fours" data-player-index="1">—</div>
+                <div class="value" data-score-key="fours" data-player-index="2">—</div>
+                <div class="value" data-score-key="fours" data-player-index="3">—</div>
               </div>
+
               <div class="score-row">
                 <div class="label">Vitoset</div>
-                <div class="value" data-score-key="fives">—</div>
+                <div class="value" data-score-key="fives" data-player-index="0">—</div>
+                <div class="value" data-score-key="fives" data-player-index="1">—</div>
+                <div class="value" data-score-key="fives" data-player-index="2">—</div>
+                <div class="value" data-score-key="fives" data-player-index="3">—</div>
               </div>
+
               <div class="score-row">
                 <div class="label">Kutoset</div>
-                <div class="value" data-score-key="sixes">—</div>
+                <div class="value" data-score-key="sixes" data-player-index="0">—</div>
+                <div class="value" data-score-key="sixes" data-player-index="1">—</div>
+                <div class="value" data-score-key="sixes" data-player-index="2">—</div>
+                <div class="value" data-score-key="sixes" data-player-index="3">—</div>
               </div>
-              <div class="score-row separator">
-                <div class="label">Yläkerran pisteet yhteensä</div>
-                <div class="value" data-score-key="upperTotal">0</div>
+
+              
+            <div class="score-row separator">
+                <div class="label">Yläkerran pisteet</div>
+                <div class="value" data-score-key="upperTotal" data-player-index="0">0</div>
+                <div class="value" data-score-key="upperTotal" data-player-index="1">0</div>
+                <div class="value" data-score-key="upperTotal" data-player-index="2">0</div>
+                <div class="value" data-score-key="upperTotal" data-player-index="3">0</div>
               </div>
+
               <div class="score-row">
                 <div class="label">Bonus</div>
-                <div class="value" data-score-key="bonus">0</div>
+                <div class="value" data-score-key="bonus" data-player-index="0">0</div>
+                <div class="value" data-score-key="bonus" data-player-index="1">0</div>
+                <div class="value" data-score-key="bonus" data-player-index="2">0</div>
+                <div class="value" data-score-key="bonus" data-player-index="3">0</div>
               </div>
+
+              <!-- Alakerta -->
               <div class="score-row separator">
                 <div class="label">Pari</div>
-                <div class="value" data-score-key="pair">—</div>
+                <div class="value" data-score-key="pair" data-player-index="0">—</div>
+                <div class="value" data-score-key="pair" data-player-index="1">—</div>
+                <div class="value" data-score-key="pair" data-player-index="2">—</div>
+                <div class="value" data-score-key="pair" data-player-index="3">—</div>
               </div>
+
               <div class="score-row">
                 <div class="label">Kaksi paria</div>
-                <div class="value" data-score-key="twoPairs">—</div>
+                <div class="value" data-score-key="twoPairs" data-player-index="0">—</div>
+                <div class="value" data-score-key="twoPairs" data-player-index="1">—</div>
+                <div class="value" data-score-key="twoPairs" data-player-index="2">—</div>
+                <div class="value" data-score-key="twoPairs" data-player-index="3">—</div>
               </div>
+
               <div class="score-row">
                 <div class="label">3-luku</div>
-                <div class="value" data-score-key="threeOfAKind">—</div>
+                <div class="value" data-score-key="threeOfAKind" data-player-index="0">—</div>
+                <div class="value" data-score-key="threeOfAKind" data-player-index="1">—</div>
+                <div class="value" data-score-key="threeOfAKind" data-player-index="2">—</div>
+                <div class="value" data-score-key="threeOfAKind" data-player-index="3">—</div>
               </div>
+
               <div class="score-row">
                 <div class="label">4-luku</div>
-                <div class="value" data-score-key="fourOfAKind">—</div>
+                <div class="value" data-score-key="fourOfAKind" data-player-index="0">—</div>
+                <div class="value" data-score-key="fourOfAKind" data-player-index="1">—</div>
+                <div class="value" data-score-key="fourOfAKind" data-player-index="2">—</div>
+                <div class="value" data-score-key="fourOfAKind" data-player-index="3">—</div>
               </div>
+
               <div class="score-row">
                 <div class="label">5-luku</div>
-                <div class="value" data-score-key="fiveOfAKind">—</div>
+                <div class="value" data-score-key="fiveOfAKind" data-player-index="0">—</div>
+                <div class="value" data-score-key="fiveOfAKind" data-player-index="1">—</div>
+                <div class="value" data-score-key="fiveOfAKind" data-player-index="2">—</div>
+                <div class="value" data-score-key="fiveOfAKind" data-player-index="3">—</div>
               </div>
+
               <div class="score-row">
                 <div class="label">Pieni suora</div>
-                <div class="value" data-score-key="smallStraight">—</div>
+                <div class="value" data-score-key="smallStraight" data-player-index="0">—</div>
+                <div class="value" data-score-key="smallStraight" data-player-index="1">—</div>
+                <div class="value" data-score-key="smallStraight" data-player-index="2">—</div>
+                <div class="value" data-score-key="smallStraight" data-player-index="3">—</div>
               </div>
+
               <div class="score-row">
                 <div class="label">Iso suora</div>
-                <div class="value" data-score-key="largeStraight">—</div>
+                <div class="value" data-score-key="largeStraight" data-player-index="0">—</div>
+                <div class="value" data-score-key="largeStraight" data-player-index="1">—</div>
+                <div class="value" data-score-key="largeStraight" data-player-index="2">—</div>
+                <div class="value" data-score-key="largeStraight" data-player-index="3">—</div>
               </div>
+
               <div class="score-row">
                 <div class="label">Mökki</div>
-                <div class="value" data-score-key="fullHouse">—</div>
-              </div>      
+                <div class="value" data-score-key="fullHouse" data-player-index="0">—</div>
+                <div class="value" data-score-key="fullHouse" data-player-index="1">—</div>
+                <div class="value" data-score-key="fullHouse" data-player-index="2">—</div>
+                <div class="value" data-score-key="fullHouse" data-player-index="3">—</div>
+              </div>
+
               <div class="score-row">
                 <div class="label">Sattuma</div>
-                <div class="value" data-score-key="chance">—</div>
+                <div class="value" data-score-key="chance" data-player-index="0">—</div>
+                <div class="value" data-score-key="chance" data-player-index="1">—</div>
+                <div class="value" data-score-key="chance" data-player-index="2">—</div>
+                <div class="value" data-score-key="chance" data-player-index="3">—</div>
               </div>
+
               <div class="score-row">
                 <div class="label">Yatzy</div>
-                <div class="value" data-score-key="yatzy">—</div>
+                <div class="value" data-score-key="yatzy" data-player-index="0">—</div>
+                <div class="value" data-score-key="yatzy" data-player-index="1">—</div>
+                <div class="value" data-score-key="yatzy" data-player-index="2">—</div>
+                <div class="value" data-score-key="yatzy" data-player-index="3">—</div>
               </div>
-              <div class="score-row">
+
+              <div class="score-row total">
                 <div class="label">Yhteensä</div>
-                <div class="value" data-score-key="total">0</div>
+                <div class="value" data-score-key="total" data-player-index="0">0</div>
+                <div class="value" data-score-key="total" data-player-index="1">0</div>
+                <div class="value" data-score-key="total" data-player-index="2">0</div>
+                <div class="value" data-score-key="total" data-player-index="3">0</div>
               </div>
-            </div>
           </section>
 
           <aside class="sidebar">
