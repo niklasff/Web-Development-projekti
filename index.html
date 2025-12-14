@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Yatzy :D</title>
+    <meta
+      name="description"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="wrap">
+      <header class="site-header" role="banner">
+        <div>
+          <h1>Harjoitustyö</h1>
+        </div>
+        <nav aria-label="top navigation">
+          <a href="säännöt.html"
+            >Säännöt</a
+          >
+        </nav>
+      </header>
+
+      <main>
+        <section class="board">
+          <section class="game-card" aria-labelledby="game-title">
+            <h2 id="game-title" class="game-title">Yatzy</h2>
+            <div class="status-row">
+              <div class="rolls-left">
+                <span class="status-label">Heittoja jäljellä:</span>
+                <span id="rolls-left">3</span>
+              </div>
+              <div
+                aria-live="polite"
+                id="game-status"
+                class="status-message"
+              >
+             </div>
+            </div>
+
+
+            <!-- Nopat -->
+            <div class="dice-row" role="group" aria-label="Dice">
+              <button
+                class="die"
+                data-die-index="0"
+                aria-pressed="false"
+                aria-label="Die 1"
+              >
+                <span class="pip">—</span>
+              </button>
+              <button
+                class="die"
+                data-die-index="1"
+                aria-pressed="false"
+                aria-label="Die 2"
+              >
+                <span class="pip">—</span>
+              </button>
+              <button
+                class="die"
+                data-die-index="2"
+                aria-pressed="false"
+                aria-label="Die 3"
+              >
+                <span class="pip">—</span>
+              </button>
+              <button
+                class="die"
+                data-die-index="3"
+                aria-pressed="false"
+                aria-label="Die 4"
+              >
+                <span class="pip">—</span>
+              </button>
+              <button
+                class="die"
+                data-die-index="4"
+                aria-pressed="false"
+                aria-label="Die 5"
+              >
+                <span class="pip">—</span>
+              </button>
+            </div>
+
+            <!-- Kontrollit, heitä, päätä vuoro buttonit -->
+            <div class="controls">
+              <button class="btn" id="roll-button" type="button">Heitä!</button>
+              <button class="btn secondary" id="end-turn-button" type="button">
+                Päätä vuoro!
+              </button>
+            </div>
+
+            <!-- Pistetaulukko staattiseti 4 pelaajalle,-->
+            <div class="scorecard" aria-label="Scorecard">
+              <div class="score-header">
+                <div class="label label--corner" aria-hidden="true"></div>
+                <div class="player-col" data-player-index="0"><button class="player-name" type="button">Pelaaja 1</button></div>                
+                <div class="player-col" data-player-index="1"><button class="player-name" type="button">Pelaaja 2</button></div>                
+                <div class="player-col" data-player-index="2"><button class="player-name" type="button">Pelaaja 3</button></div>
+                <div class="player-col" data-player-index="3"><button class="player-name" type="button">Pelaaja 4</button></div>
+              </div>
+
+              <!-- Yläkerta -->
+              <div class="score-row">
+                <div class="label">Ykköset</div>
+                <div class="value" data-score-key="ones" data-player-index="0">—</div>
+                <div class="value" data-score-key="ones" data-player-index="1">—</div>
+                <div class="value" data-score-key="ones" data-player-index="2">—</div>
+                <div class="value" data-score-key="ones" data-player-index="3">—</div>
+              </div>
+
+              <div class="score-row">
+                <div class="label">Kakkoset</div>
+                <div class="value" data-score-key="twos" data-player-index="0">—</div>
+                <div class="value" data-score-key="twos" data-player-index="1">—</div>
+                <div class="value" data-score-key="twos" data-player-index="2">—</div>
+                <div class="value" data-score-key="twos" data-player-index="3">—</div>
+              </div>
+
+              <div class="score-row">
+                <div class="label">Kolmoset</div>
+                <div class="value" data-score-key="threes" data-player-index="0">—</div>
+                <div class="value" data-score-key="threes" data-player-index="1">—</div>
+                <div class="value" data-score-key="threes" data-player-index="2">—</div>
+                <div class="value" data-score-key="threes" data-player-index="3">—</div>
+              </div>
+
+              <div class="score-row">
+                <div class="label">Neloset</div>
+                <div class="value" data-score-key="fours" data-player-index="0">—</div>
+                <div class="value" data-score-key="fours" data-player-index="1">—</div>
+                <div class="value" data-score-key="fours" data-player-index="2">—</div>
+                <div class="value" data-score-key="fours" data-player-index="3">—</div>
+              </div>
+
+              <div class="score-row">
+                <div class="label">Vitoset</div>
+                <div class="value" data-score-key="fives" data-player-index="0">—</div>
+                <div class="value" data-score-key="fives" data-player-index="1">—</div>
+                <div class="value" data-score-key="fives" data-player-index="2">—</div>
+                <div class="value" data-score-key="fives" data-player-index="3">—</div>
+              </div>
+
+              <div class="score-row">
+                <div class="label">Kutoset</div>
+                <div class="value" data-score-key="sixes" data-player-index="0">—</div>
+                <div class="value" data-score-key="sixes" data-player-index="1">—</div>
+                <div class="value" data-score-key="sixes" data-player-index="2">—</div>
+                <div class="value" data-score-key="sixes" data-player-index="3">—</div>
+              </div>
+
+              
+            <div class="score-row separator">
+                <div class="label">Yläkerran pisteet</div>
+                <div class="value" data-score-key="upperTotal" data-player-index="0">0</div>
+                <div class="value" data-score-key="upperTotal" data-player-index="1">0</div>
+                <div class="value" data-score-key="upperTotal" data-player-index="2">0</div>
+                <div class="value" data-score-key="upperTotal" data-player-index="3">0</div>
+              </div>
+
+              <div class="score-row separator">
+                <div class="label">Bonus</div>
+                <div class="value" data-score-key="bonus" data-player-index="0">0</div>
+                <div class="value" data-score-key="bonus" data-player-index="1">0</div>
+                <div class="value" data-score-key="bonus" data-player-index="2">0</div>
+                <div class="value" data-score-key="bonus" data-player-index="3">0</div>
+              </div>
+
+              <!-- Alakerta -->
+              <div class="score-row">
+                <div class="label">Pari</div>
+                <div class="value" data-score-key="pair" data-player-index="0">—</div>
+                <div class="value" data-score-key="pair" data-player-index="1">—</div>
+                <div class="value" data-score-key="pair" data-player-index="2">—</div>
+                <div class="value" data-score-key="pair" data-player-index="3">—</div>
+              </div>
+
+              <div class="score-row">
+                <div class="label">Kaksi paria</div>
+                <div class="value" data-score-key="twoPairs" data-player-index="0">—</div>
+                <div class="value" data-score-key="twoPairs" data-player-index="1">—</div>
+                <div class="value" data-score-key="twoPairs" data-player-index="2">—</div>
+                <div class="value" data-score-key="twoPairs" data-player-index="3">—</div>
+              </div>
+
+              <div class="score-row">
+                <div class="label">3-luku</div>
+                <div class="value" data-score-key="threeOfAKind" data-player-index="0">—</div>
+                <div class="value" data-score-key="threeOfAKind" data-player-index="1">—</div>
+                <div class="value" data-score-key="threeOfAKind" data-player-index="2">—</div>
+                <div class="value" data-score-key="threeOfAKind" data-player-index="3">—</div>
+              </div>
+
+              <div class="score-row">
+                <div class="label">4-luku</div>
+                <div class="value" data-score-key="fourOfAKind" data-player-index="0">—</div>
+                <div class="value" data-score-key="fourOfAKind" data-player-index="1">—</div>
+                <div class="value" data-score-key="fourOfAKind" data-player-index="2">—</div>
+                <div class="value" data-score-key="fourOfAKind" data-player-index="3">—</div>
+              </div>
+
+              <div class="score-row">
+                <div class="label">5-luku</div>
+                <div class="value" data-score-key="fiveOfAKind" data-player-index="0">—</div>
+                <div class="value" data-score-key="fiveOfAKind" data-player-index="1">—</div>
+                <div class="value" data-score-key="fiveOfAKind" data-player-index="2">—</div>
+                <div class="value" data-score-key="fiveOfAKind" data-player-index="3">—</div>
+              </div>
+
+              <div class="score-row">
+                <div class="label">Pieni suora</div>
+                <div class="value" data-score-key="smallStraight" data-player-index="0">—</div>
+                <div class="value" data-score-key="smallStraight" data-player-index="1">—</div>
+                <div class="value" data-score-key="smallStraight" data-player-index="2">—</div>
+                <div class="value" data-score-key="smallStraight" data-player-index="3">—</div>
+              </div>
+
+              <div class="score-row">
+                <div class="label">Iso suora</div>
+                <div class="value" data-score-key="largeStraight" data-player-index="0">—</div>
+                <div class="value" data-score-key="largeStraight" data-player-index="1">—</div>
+                <div class="value" data-score-key="largeStraight" data-player-index="2">—</div>
+                <div class="value" data-score-key="largeStraight" data-player-index="3">—</div>
+              </div>
+
+              <div class="score-row">
+                <div class="label">Mökki</div>
+                <div class="value" data-score-key="fullHouse" data-player-index="0">—</div>
+                <div class="value" data-score-key="fullHouse" data-player-index="1">—</div>
+                <div class="value" data-score-key="fullHouse" data-player-index="2">—</div>
+                <div class="value" data-score-key="fullHouse" data-player-index="3">—</div>
+              </div>
+
+              <div class="score-row">
+                <div class="label">Sattuma</div>
+                <div class="value" data-score-key="chance" data-player-index="0">—</div>
+                <div class="value" data-score-key="chance" data-player-index="1">—</div>
+                <div class="value" data-score-key="chance" data-player-index="2">—</div>
+                <div class="value" data-score-key="chance" data-player-index="3">—</div>
+              </div>
+
+              <div class="score-row">
+                <div class="label">Yatzy</div>
+                <div class="value" data-score-key="yatzy" data-player-index="0">—</div>
+                <div class="value" data-score-key="yatzy" data-player-index="1">—</div>
+                <div class="value" data-score-key="yatzy" data-player-index="2">—</div>
+                <div class="value" data-score-key="yatzy" data-player-index="3">—</div>
+              </div>
+
+              <div class="score-row total">
+                <div class="label">Yhteensä</div>
+                <div class="value" data-score-key="total" data-player-index="0">0</div>
+                <div class="value" data-score-key="total" data-player-index="1">0</div>
+                <div class="value" data-score-key="total" data-player-index="2">0</div>
+                <div class="value" data-score-key="total" data-player-index="3">0</div>
+              </div>
+          </section>
+
+          <aside class="sidebar">
+            <div class="players">
+              <h3 class="section-heading">Pelaajat:</h3>
+              <div class="player">
+                <span>Pelaaja 1</span><strong data-player-score="0">0</strong>
+              </div>
+              <div class="player">
+                <span>Pelaaja 2</span><strong data-player-score="1">0</strong>
+              </div>
+              <div class="player">
+                <span>Pelaaja 3</span><strong data-player-score="2">0</strong>
+              </div>
+              <div class="player">
+                <span>Pelaaja 4</span><strong data-player-score="3">0</strong>
+              </div>
+            
+            </div>
+
+            <!-- Pieni taulukko säännöistä -->
+            <div class="game-card game-card--compact">
+              <h4 class="section-heading">Quick tips</h4>
+              <ul class="tip-list">
+                <li>Klikkaa "Heitä" nappia rullataksesi noppia.</li>
+                <li>Voit klikata noppaa ja lukita sen / poistaa lukituksen</li>
+              </ul>
+            </div>
+
+            <footer>
+              
+            </footer>
+          </aside>
+        </section>
+      </main>
+    </div>
+
+
+  <script src="PisteidenLaskeminen.js"></script>
+  <script src="Taulukko.js"></script>
+  <script src="noppatoiminta.js"></script>
+
+
+  </body>
+</html>
