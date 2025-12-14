@@ -22,17 +22,17 @@ Ominaisuudet
 
 🔒 Mahdollisuus lukita nopat heittojen välillä
 
-👤 Useampi pelaaja (oletuksena 4)
+👤 Neljä pelaajaa
 
-📊 Täydellinen Yatzy-pistetaulukko
+📊 Yatzy-pistetaulukko
 
 🔢 Automaattinen pistelaskenta eri yhdistelmille
 
 🔄 Vuorojen hallinta pelaajalta toiselle
 
-♿ Saavutettavuus huomioitu (ARIA-attribuutit)
+♿ Saavutettavuus huomioitu
 
-📱 Responsiivinen ulkoasu (toimii mobiilissa ja työpöydällä)
+📱 Responsiivinen ulkoasu
 
 -------------------------------------------------------------------------------
 
